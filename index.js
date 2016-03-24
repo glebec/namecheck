@@ -1,3 +1,4 @@
+var https = require('https');
 var http = require('http');
 var chalk = require('chalk');
 
@@ -13,7 +14,7 @@ var checked = [],
     pos = 0;
 
 names.forEach(function(name, i){
-  http.request({
+  https.request({
     method: 'HEAD',
     hostname: 'registry.npmjs.org',
     path: '/' + name
